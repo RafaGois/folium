@@ -21,14 +21,5 @@ gsap.from(".header .title", {
 
   gsap.from('.hero', {
     duration: 1, // start the animation when ".box" enters the viewport (once)
-    x: 500
+    x: "100%"
 });
-
-gsap.to(".about .box img", /* { x: 100 } */),
-  st = ScrollTrigger.create({
-    trigger: ".trigger",
-    start: "top center",
-    end: "+=500",
-    onUpdate: (self) => console.log("progress:", self.progress),
-    animation: tween,
-  });
