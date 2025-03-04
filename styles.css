@@ -111,8 +111,8 @@ body {
 }
 
 .about .box img {
-    height: 20rem;
-    width: 20rem;
+    height: 18rem;
+    width: 18rem;
 
     border-radius: 50%
 
@@ -166,8 +166,9 @@ body {
 }
 
 .container small {
-    max-width: 1200px;
+    max-width: 600px;
     text-wrap: wrap;
+    text-align: end;
 }
 
 @media screen and (max-width: 720px) {
@@ -182,5 +183,27 @@ body {
 
     .about {
         flex-direction: column;
+    }
+
+    #skills {
+        flex-direction: column;
+    }
+
+    #skills .container {
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    #skills .box:nth-child(2) {
+        padding: 0;
+        margin-top: 4em;
+    }
+
+    #skills .container h1 {
+        font-size: 3.5rem;
+    }
+
+    #skills .container small {
+        text-align: justify;        
     }
 }   
