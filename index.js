@@ -9,7 +9,6 @@ gsap.from(".degree", {
   opacity: 0,
   duration: 7.5,
   ease: "steps(12)",
-
 });
 
 gsap.from(".header .title", {
