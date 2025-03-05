@@ -9,7 +9,7 @@ body {
     padding: 0;
 }
 
-.hero {
+#hero {
     height: 100vh;
     width: 100%;
     background: #000;
@@ -22,7 +22,7 @@ body {
     padding: 8px;
 }
 
-.hero .body {
+#hero .body {
     width: 100%;
     flex: 1;
     display: flex;
@@ -32,14 +32,14 @@ body {
     padding: 16px;
 }
 
-.hero .body h1 {
+#hero .body h1 {
     font-size: 8rem;
     margin: 0;
     line-height: 6rem
 }
 
-.about {
-    height: 100vh;
+#about {
+    min-height: 100vh;
     width: 100%;
     background: #fff;
     color: #000;
@@ -56,17 +56,17 @@ body {
     line-height: 6rem
 }
 
-.about div {
+#about div {
     flex: 1;
 }
 
-.about .box:nth-child(1) {
+#about .box:nth-child(1) {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.about .box:nth-child(2) {
+#about .box:nth-child(2) {
     flex: 2;
 
     display: grid;
@@ -74,7 +74,7 @@ body {
     padding: 24px;
 }
 
-.about .box:nth-child(2) div {
+#about .box:nth-child(2) div {
     border-top: .5px solid #000;
     
     display: flex;
@@ -83,43 +83,42 @@ body {
     align-items: center;
 }
 
-.about .box:nth-child(2) div:nth-child(1) {
+#about .box:nth-child(2) div:nth-child(1) {
     border-top: none
 }
 
-.about .box:nth-child(2) div:nth-child(2) {
+#about .box:nth-child(2) div:nth-child(2) {
     border-top: none
 }
 
-.about .box:nth-child(2) > *:nth-child(odd) { /* Aplica ao primeiro item de cada linha */
+#about .box:nth-child(2) > *:nth-child(odd) { /* Aplica ao primeiro item de cada linha */
     border-right: 1px solid #000;
     padding-right: 12px; /* Espaço para não colar na borda */
 }
 
-.about .box:nth-child(1) div {
+#about .box:nth-child(1) div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
 }
 
-.about .box:nth-child(2) div {
+#about .box:nth-child(2) div {
     display: flex;
     justify-content: flex-start;
     align-items: start;
     padding: 0 18px
 }
 
-.about .box img {
+#about .box img {
     height: 18rem;
     width: 18rem;
 
     border-radius: 50%
-
 }
 
 #skills {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background: #fff;
     color: #000;
@@ -147,7 +146,7 @@ body {
 #skills .box:nth-child(2) {
     flex: 3;
     width: 100%;
-    padding: 4rem
+    padding-bottom: 2rem;
 }
 
 .container {
@@ -171,17 +170,88 @@ body {
     text-align: end;
 }
 
+#more-skills {
+    min-height: 100vh;
+    width: 100%;
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+}
+
+#more-skills .box:nth-child(1) {
+    flex: 1;
+}
+
+#more-skills .box:nth-child(2) {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+#more-skills .box:nth-child(2) .container {
+    border-top: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 8px;
+    flex: 1
+}
+
+#more-skills .box:nth-child(2) .container h2 {
+    font-size: 3rem;
+    margin: 0;
+    line-height: 4rem;
+    font-weight: 400;
+    text-wrap: nowrap;
+}
+
+#projects {
+    min-height: 100vh;
+    width: 100%;
+    background: #fff;
+    color: #000;
+
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+}
+
+#projects .box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    //border: .5px solid #000
+}
+
+#projects .box .cell:first-child {
+    height: 200px;
+}
+
+#projects .box .cell:last-child {
+    flex: 1;
+}
+
+#projects .box .cell:nth-child(1n)::after {
+    display: block;
+    border-bottom: 1px sold #000;
+    margin-bottom: 20px;
+    content: "";
+  }
+
 @media screen and (max-width: 720px) {
-    .hero .body .date {
+    #hero .body .date {
         display: none;
         background: #fff;
     }
 
-    .hero .body h1 {
+    #hero .body h1 {
         font-size: 5rem;
     }
 
-    .about {
+    #about {
         flex-direction: column;
     }
 
@@ -196,6 +266,8 @@ body {
 
     #skills .box:nth-child(2) {
         padding: 0;
+
+
         margin-top: 4em;
     }
 
@@ -205,5 +277,15 @@ body {
 
     #skills .container small {
         text-align: justify;        
+    }
+
+    #more-skills {
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    #more-skills .box:nth-child(2) .container {
+        padding-top: 0;
+        padding-left: 0;
     }
 }   
