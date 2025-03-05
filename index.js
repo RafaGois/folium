@@ -55,11 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
       trigger: "card.id",
       start: "top top",
       start: "+=1200vh",
-      scrup: 1,
+      rotate: "+=100",
       onUpdate: (self) => {
         gsap.to(card.id, {
           x: `${card.endTranslateX * self.progress}px`,
-          rotate: `${card.rotate * self.progress * 2}`,
+          rotation: `${card.rotate * self.progress * 10}`,
           duration: 0.5,
           ease: "power3.out",
         })
