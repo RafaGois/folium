@@ -18,7 +18,7 @@ gsap.from(".header .title", {
     ease: "slow(0.7,0.7,false)",
   });
 
-  gsap.from('.hero', {
-    duration: 1, // start the animation when ".box" enters the viewport (once)
+  gsap.from('#hero', {
+    duration: 2, // start the animation when ".box" enters the viewport (once)
     x: "100%"
 });
