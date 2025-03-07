@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //let title = document.getElementById("")
 
+  gsap.registerPlugin(ScrollTrigger)
+
   gsap.from(".name", {
     opacity: 0,
     y: -250,
@@ -69,92 +71,37 @@ document.addEventListener("DOMContentLoaded", function () {
   })
 });
 
-let element = document.querySelector("#about .box:nth-child(2) div:nth-child(1)")
-gsap.from(element, {
-  opacity: 0,
-  x: "-100%",
-  duration: 3,
-  delay: 0.5,
-  ease: "elastic(1, 0.3)",
-  scrollTrigger: {
-    trigger: ".box",  // Elemento que ativa a animação
-    start: "top 80%", // Inicia quando o topo do elemento chega a 80% da tela
-    //toggleActions: "play none none none", // Reproduz uma vez ao entrar
-   // delay:10,
-  }
-})
 
-let element2 = document.querySelector("#about .box:nth-child(2) div:nth-child(2)")
-gsap.from(element2, {
+let tl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#about .box:nth-child(2)",
+    start: "top 70%",
+    end: "+=100vh",
+    toggleActions: "restart none none reverse"
+  }
+});
+
+tl.from(gsap.utils.toArray("#about .box:nth-child(2) div"), {
   opacity: 0,
+  duration: 1.5,
   x: "100%",
-  duration: 2.5,
-  delay: 1,
-  ease: "elastic(1, 0.3)",
-  scrollTrigger: {
-    trigger: ".box",  // Elemento que ativa a animação
-    start: "top 80%", // Inicia quando o topo do elemento chega a 80% da tela
-    //toggleActions: "play none none none", // Reproduz uma vez ao entrar
-   // delay:10,
-  }
-})
+  ease: "slow(0.7,0.7,false)",
+  stagger: 0.5 // Adiciona um atraso de 0.5s entre cada animação
+});
 
-let element3 = document.querySelector("#about .box:nth-child(2) div:nth-child(3)")
-gsap.from(element3, {
-  opacity: 0,
-  x: "-100%",
-  duration: 3,
-  delay: 1.5,
-  ease: "elastic(1, 0.3)",
+let tl2 = gsap.timeline({
   scrollTrigger: {
-    trigger: ".box",  // Elemento que ativa a animação
-    start: "top 80%", // Inicia quando o topo do elemento chega a 80% da tela
-    //toggleActions: "play none none none", // Reproduz uma vez ao entrar
-   // delay:10,
+    trigger: "#skills .box:nth-child(2)",
+    start: "top 70%",
+    end: "+=100vh",
+    toggleActions: "restart none none reverse"
   }
-})
+});
 
-let element4 = document.querySelector("#about .box:nth-child(2) div:nth-child(4)")
-gsap.from(element4, {
+tl2.from(gsap.utils.toArray("#skills .box:nth-child(2) .container"), {
   opacity: 0,
+  duration: 1.5,
   x: "100%",
-  duration: 3,
-  delay: 2,
-  ease: "elastic(1, 0.3)",
-  scrollTrigger: {
-    trigger: ".box",  // Elemento que ativa a animação
-    start: "top 80%", // Inicia quando o topo do elemento chega a 80% da tela
-    //toggleActions: "play none none none", // Reproduz uma vez ao entrar
-   // delay:10,
-  }
-})
-
-let element5 = document.querySelector("#about .box:nth-child(2) div:nth-child(5)")
-gsap.from(element5, {
-  opacity: 0,
-  x: "-100%",
-  duration: 3,
-  delay: 2.5,
-  ease: "elastic(1, 0.3)",
-  scrollTrigger: {
-    trigger: ".box",  // Elemento que ativa a animação
-    start: "top 80%", // Inicia quando o topo do elemento chega a 80% da tela
-    //toggleActions: "play none none none", // Reproduz uma vez ao entrar
-   // delay:10,
-  }
-})
-
-let element6 = document.querySelector("#about .box:nth-child(2) div:nth-child(6)")
-gsap.from(element6, {
-  opacity: 0,
-  x: "100%",
-  duration: 3,
-  delay: 3,
-  ease: "elastic(1, 0.3)",
-  scrollTrigger: {
-    trigger: "#about",  // Elemento que ativa a animação
-    start: "top 70%", // Inicia quando o topo do elemento chega a 80% da tela
-    //toggleActions: "play none none none", // Reproduz uma vez ao entrar
-   // delay:10,
-  }
-})
+  ease: "slow(0.7,0.7,false)",
+  stagger: 0.5 // Adiciona um atraso de 0.5s entre cada animação
+});
