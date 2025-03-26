@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(TextPlugin);
 
   gsap.from(".name", {
     opacity: 0,
@@ -93,4 +94,22 @@ document.addEventListener("DOMContentLoaded", function () {
     stagger: 0.5, // Adiciona um atraso de 0.5s entre cada animação
   });
 
+  const caption = document.querySelector("#name")
+
+  
+  const captions = ["Full Stack", "Front-End", "Back-End", "Mobile"];
+  const tlaa = gsap.timeline({
+    repeat: -1,
+  });
+
+  for (let i = 0; i < captions.length; i++) {
+    tlaa
+      .to(caption,{ duration: 1 })
+      .fromTo(
+        caption,
+        { text: caption.innerText, opacity: 0 },
+        { text: captions[i], duration: 3.5, opacity: 1 },
+        "<"
+      );
+  }
 });
