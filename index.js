@@ -93,34 +93,4 @@ document.addEventListener("DOMContentLoaded", function () {
     stagger: 0.5, // Adiciona um atraso de 0.5s entre cada animação
   });
 
-
-  const wordContainer = document.querySelector(".word-container");
-  const words = gsap.utils.toArray(".rotating-word");
-  let maxWidth = 0;
-  const tla = gsap.timeline({
-    repeat: -1
-  });
-  gsap.set(words, {
-    yPercent: (i) => i && 100,
-    opacity: 1
-  });
-  words.forEach((word, i) => {
-    const next = words[i + 1];
-    if (next) {
-      tla.to(word, { yPercent: -100 }, "+=1.5").to(next, { yPercent: 0 }, "<");
-    } else {
-      // Final word
-      tla.to(word, { yPercent: -100 }, "+=1.5").fromTo(
-        words[0],
-        {
-          yPercent: 100
-        },
-        {
-          yPercent: 0,
-          immediateRender: false
-        },
-        "<"
-      );
-    }
-  });
 });
