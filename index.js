@@ -96,15 +96,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const caption = document.querySelector("#name")
 
-  
-  const captions = ["Full Stack", "Front-End", "Back-End", "Mobile"];
+  const colors = ["#6936f5", "#eb8f34", "#eb3734", "#65eb34"];
+  const captions = ["Full-Stack", "Front-End", "Back-End", "Mobile"];
   const tlaa = gsap.timeline({
     repeat: -1,
   });
 
   for (let i = 0; i < captions.length; i++) {
     tlaa
-      .to(caption,{ duration: 1 })
+      .to(caption,{ duration: 1, color: colors[i] })
       .fromTo(
         caption,
         { text: caption.innerText, opacity: 0 },
