@@ -535,4 +535,13 @@
     opacity: 0;
   }
 
-
+  .text-container {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  .char {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1ch;
+  }

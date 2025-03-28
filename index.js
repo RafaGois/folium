@@ -1,4 +1,7 @@
+import { matrixEffect } from "./effects.js";
+
 document.addEventListener("DOMContentLoaded", function () {
+
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(TextPlugin);
 
@@ -112,4 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "<"
       );
   }
+
+  matrixEffect(".stack", gsap);
 });
