@@ -1,6 +1,8 @@
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
 
 export function matrixEffect(elementId, gsap) {
+  //todo colocar o que pega o text container e pega o texto a aprtir dele
+  //todo colocar o id em cada text container para nao precisar colcoar manualmente
   const elements = document.querySelectorAll(elementId);
 
   elements.forEach((element, index) => {
@@ -17,13 +19,13 @@ export function matrixEffect(elementId, gsap) {
       scrollTrigger: {
         id: "reveal",
         //todo esse trigger deve ser único
-        trigger: "#skills",
-        start: "top 10%",
+        trigger: ".text-container-" + (index + 1),
+        start: "top 70%",
         //end: "bottom 70%",
         toggleActions: "restart none none none",
       },
       stagger: {
-        each: 0.5,
+        each: 0.4,
         from: "random",
         onStart: function () {
           scrambleEffect(
