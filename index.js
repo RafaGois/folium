@@ -117,4 +117,22 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   matrixEffect(".stack", gsap);
+
+  let moreSkills = document.querySelectorAll(".box .container")
+
+/*   gsap.scrollTrigger(moreSkills, {
+    trigger: "#more-skills",
+    start: "top 80%",
+    end: "+=200vh",
+    toggleActions: "restart none none reverse",
+    x: 100,
+    stagger: 0.5
+  }) */
+  gsap.from(moreSkills, {
+    scrollTrigger: "#more-skills", // start the animation when ".box" enters the viewport (once)
+    y: 500,
+    stagger: 0.5,
+    start: "top 50%",
+});
+  
 });
